@@ -23,7 +23,7 @@ const schema = yup.object({
     .max(25)
     .test("nickname", "Nickname already in use", (value) => {
       return new Promise((resolve) => {
-        const request = new Request("http://localhost:3000/api/example/exist", {
+        const request = new Request("https://draconid719.github.io/dayzero/api/example/exist", {
           method: "POST",
           body: JSON.stringify({ name: value }),
         });
@@ -82,7 +82,7 @@ export default function Form({ setSuccess }: Props) {
   });
 
   const onSubmit = (data: any) => {
-    const request = new Request("http://localhost:3000/api/example", {
+    const request = new Request("https://draconid719.github.io/dayzero/api/example", {
       method: "POST",
       body: JSON.stringify(data),
     });
