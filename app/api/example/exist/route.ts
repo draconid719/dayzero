@@ -1,5 +1,11 @@
 import { type NextRequest } from "next/server";
 
+export async function GET(request: Request) {
+  const data = await ["test"];
+
+  return Response.json({ data });
+}
+
 export async function POST(request: NextRequest) {
   const body = await request.json();
 
