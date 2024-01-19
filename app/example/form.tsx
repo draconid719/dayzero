@@ -28,26 +28,31 @@ const schema = yup.object({
           body: JSON.stringify({ name: value }),
         });
 
-        fetch(request)
-          .then((response) => {
-            if (response.status === 200) {
-              return response.json();
-            } else {
-              throw new Error("Something went wrong on API server!");
-            }
-          })
-          .then((response) => {
-            console.log("🚀 ~ .then ~ response:", response);
-            if (response.result) {
-              resolve(false);
-            } else {
-              resolve(true);
-            }
-          })
-          .catch((error) => {
-            console.log("🚀 ~ returnnewPromise ~ error:", error);
-            resolve(true);
-          });
+        if (value === "the_antonyv32") {
+          resolve(true)
+        } else {
+          resolve(false)
+        }
+        // fetch(request)
+        //   .then((response) => {
+        //     if (response.status === 200) {
+        //       return response.json();
+        //     } else {
+        //       throw new Error("Something went wrong on API server!");
+        //     }
+        //   })
+        //   .then((response) => {
+        //     console.log("🚀 ~ .then ~ response:", response);
+        //     if (response.result) {
+        //       resolve(false);
+        //     } else {
+        //       resolve(true);
+        //     }
+        //   })
+        //   .catch((error) => {
+        //     console.log("🚀 ~ returnnewPromise ~ error:", error);
+        //     resolve(true);
+        //   });
       });
     }),
   email: yup.string().required("The email is required to proceed").email(),
@@ -86,22 +91,24 @@ export default function Form({ setSuccess }: Props) {
       method: "POST",
       body: JSON.stringify(data),
     });
+    
+    setSuccess(true);
 
-    fetch(request)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        } else {
-          throw new Error("Something went wrong on API server!");
-        }
-      })
-      .then((response) => {
-        console.log("🚀 ~ .then ~ response:", response);
-        setSuccess(true);
-      })
-      .catch((error) => {
-        console.log("🚀 ~ onSubmit ~ error:", error);
-      });
+    // fetch(request)
+    //   .then((response) => {
+    //     if (response.status === 200) {
+    //       return response.json();
+    //     } else {
+    //       throw new Error("Something went wrong on API server!");
+    //     }
+    //   })
+    //   .then((response) => {
+    //     console.log("🚀 ~ .then ~ response:", response);
+    //     setSuccess(true);
+    //   })
+    //   .catch((error) => {
+    //     console.log("🚀 ~ onSubmit ~ error:", error);
+    //   });
   };
 
   return (
