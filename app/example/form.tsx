@@ -29,9 +29,9 @@ const schema = yup.object({
         });
 
         if (value === "the_antonyv32") {
-          resolve(true)
-        } else {
           resolve(false)
+        } else {
+          resolve(true)
         }
         // fetch(request)
         //   .then((response) => {
