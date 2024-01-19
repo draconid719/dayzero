@@ -2,26 +2,284 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.cdnfonts.com/css/switzer");
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  --body-big-bold-font-family: "Switzer-Bold", Helvetica;
+  --body-big-bold-font-size: 18px;
+  --body-big-bold-font-style: normal;
+  --body-big-bold-font-weight: 700;
+  --body-big-bold-letter-spacing: 0.72px;
+  --body-big-bold-line-height: 175.99999904632568%;
+  --body-big-font-family: "Switzer-Regular", Helvetica;
+  --body-big-font-size: 18px;
+  --body-big-font-style: normal;
+  --body-big-font-weight: 400;
+  --body-big-letter-spacing: 0.72px;
+  --body-big-line-height: 175.99999904632568%;
+  --body-big-medium-short-font-family: "Switzer-Semibold", Helvetica;
+  --body-big-medium-short-font-size: 18px;
+  --body-big-medium-short-font-style: normal;
+  --body-big-medium-short-font-weight: 400;
+  --body-big-medium-short-letter-spacing: 0.18px;
+  --body-big-medium-short-line-height: 87.99999952316284%;
+  --body-bold-font-family: "Switzer-Medium", Helvetica;
+  --body-bold-font-size: 16px;
+  --body-bold-font-style: normal;
+  --body-bold-font-weight: 500;
+  --body-bold-letter-spacing: 0.32px;
+  --body-bold-line-height: 150%;
+  --body-joy-font-family: "IBMPlex Serif-MediumItalic", Helvetica;
+  --body-joy-font-size: 16px;
+  --body-joy-font-style: italic;
+  --body-joy-font-weight: 500;
+  --body-joy-letter-spacing: 0.32px;
+  --body-joy-line-height: 150%;
+  --body-light-font-family: "Switzer-Light", Helvetica;
+  --body-light-font-size: 16px;
+  --body-light-font-style: normal;
+  --body-light-font-weight: 300;
+  --body-light-letter-spacing: 0.32px;
+  --body-light-line-height: 150%;
+  --body-regular-font-family: "Switzer-Regular", Helvetica;
+  --body-regular-font-size: 16px;
+  --body-regular-font-style: normal;
+  --body-regular-font-weight: 400;
+  --body-regular-letter-spacing: 0.32px;
+  --body-regular-line-height: 150%;
+  --elements-button-font-family: "Switzer-Medium", Helvetica;
+  --elements-button-font-size: 16px;
+  --elements-button-font-style: normal;
+  --elements-button-font-weight: 500;
+  --elements-button-joy-font-family: "IBMPlex Serif-SemiBoldItalic", Helvetica;
+  --elements-button-joy-font-size: 16px;
+  --elements-button-joy-font-style: italic;
+  --elements-button-joy-font-weight: 600;
+  --elements-button-joy-letter-spacing: 0.16px;
+  --elements-button-joy-line-height: 150%;
+  --elements-button-letter-spacing: 0.16px;
+  --elements-button-line-height: 150%;
+  --elements-link-font-family: "Switzer-Medium", Helvetica;
+  --elements-link-font-size: 16px;
+  --elements-link-font-style: normal;
+  --elements-link-font-weight: 500;
+  --elements-link-letter-spacing: 0.32px;
+  --elements-link-line-height: 150%;
+  --elements-text-inputs-font-family: "Switzer-Light", Helvetica;
+  --elements-text-inputs-font-size: 16px;
+  --elements-text-inputs-font-style: normal;
+  --elements-text-inputs-font-weight: 300;
+  --elements-text-inputs-letter-spacing: 0.32px;
+  --elements-text-inputs-line-height: 150%;
+  --elevation-1: 0px 4px 8px 0px rgba(32, 30, 28, 0.25);
+  --elevation-2: 0px 4px 8px 4px rgba(32, 30, 28, 0.25);
+  --elevation-3: 0px 16px 16px 8px rgba(32, 30, 28, 0.2);
+  --headers-display-font-family: "Switzer-Black", Helvetica;
+  --headers-display-font-size: 48px;
+  --headers-display-font-style: normal;
+  --headers-display-font-weight: 900;
+  --headers-display-joy-font-family: "IBMPlex Serif-BoldItalic", Helvetica;
+  --headers-display-joy-font-size: 48px;
+  --headers-display-joy-font-style: italic;
+  --headers-display-joy-font-weight: 700;
+  --headers-display-joy-letter-spacing: -0.96px;
+  --headers-display-joy-line-height: 116.99999570846558%;
+  --headers-display-letter-spacing: -0.96px;
+  --headers-display-line-height: 116.99999570846558%;
+  --headers-primary-font-family: "Switzer-Medium", Helvetica;
+  --headers-primary-font-size: 26px;
+  --headers-primary-font-style: normal;
+  --headers-primary-font-weight: 500;
+  --headers-primary-joy-font-family: "IBMPlex Serif-SemiBoldItalic", Helvetica;
+  --headers-primary-joy-font-size: 26px;
+  --headers-primary-joy-font-style: italic;
+  --headers-primary-joy-font-weight: 600;
+  --headers-primary-joy-letter-spacing: 0px;
+  --headers-primary-joy-line-height: 123.00000190734863%;
+  --headers-primary-letter-spacing: 0px;
+  --headers-primary-line-height: 123.00000190734863%;
+  --headers-secondary-font-family: "Switzer-Medium", Helvetica;
+  --headers-secondary-font-size: 22px;
+  --headers-secondary-font-style: normal;
+  --headers-secondary-font-weight: 500;
+  --headers-secondary-joy-font-family: "IBMPlex Serif-MediumItalic", Helvetica;
+  --headers-secondary-joy-font-size: 22px;
+  --headers-secondary-joy-font-style: italic;
+  --headers-secondary-joy-font-weight: 500;
+  --headers-secondary-joy-letter-spacing: 0.44px;
+  --headers-secondary-joy-line-height: 111.00000143051147%;
+  --headers-secondary-letter-spacing: 0.44px;
+  --headers-secondary-line-height: 111.00000143051147%;
+  --headers-tertiary-font-family: "Switzer-Semibold", Helvetica;
+  --headers-tertiary-font-size: 18px;
+  --headers-tertiary-font-style: normal;
+  --headers-tertiary-font-weight: 400;
+  --headers-tertiary-joy-font-family: "IBMPlex Serif-SemiBoldItalic", Helvetica;
+  --headers-tertiary-joy-font-size: 18px;
+  --headers-tertiary-joy-font-style: italic;
+  --headers-tertiary-joy-font-weight: 600;
+  --headers-tertiary-joy-letter-spacing: 0px;
+  --headers-tertiary-joy-line-height: 132.00000524520874%;
+  --headers-tertiary-letter-spacing: 0px;
+  --headers-tertiary-line-height: 132.00000524520874%;
+  --layout-espacio-margen-vertical: var(--primitivas-medidas-medida-m);
+  --layout-radios-radio-mediano: var(--primitivas-medidas-medida-m);
+  --layout-responsividad-ancho-minimo: 320px;
+  --layout-responsividad-tablet-ancho-tablet: 768px;
+  --primitivas-medidas-medida-m: 16px;
+  --primitives-measurements-measurement-l: 24px;
+  --primitives-measurements-measurement-m: 16px;
+  --primitives-measurements-measurement-s: 8px;
+  --primitives-measurements-measurement-xl: 32px;
+  --primitives-measurements-measurement-xs: 4px;
+  --primitives-primitive-colors-clear-gray-shade: rgba(204, 204, 204, 0.2);
+  --primitives-primitive-colors-dayzero-almost-black: rgba(32, 30, 28, 1);
+  --primitives-primitive-colors-dayzero-almost-black-active: rgba(
+    32,
+    30,
+    28,
+    0.8
+  );
+  --primitives-primitive-colors-dayzero-almost-white: rgba(250, 248, 245, 1);
+  --primitives-primitive-colors-dayzero-fresh-orange: rgba(250, 121, 33, 1);
+  --primitives-primitive-colors-dayzero-olive-green: rgba(70, 88, 50, 1);
+  --primitives-primitive-colors-dayzero-warm-light-gray: rgba(247, 243, 238, 1);
+  --primitives-primitive-colors-dayzero-warm-mid-gray: rgba(240, 237, 229, 1);
+  --primitives-primitive-colors-error: rgba(255, 65, 65, 1);
+  --primitives-primitive-colors-light: rgba(255, 255, 255, 1);
+  --primitives-primitive-colors-soft-gray: rgba(204, 204, 204, 1);
+  --small-light-font-family: "Switzer-Light", Helvetica;
+  --small-light-font-size: 14px;
+  --small-light-font-style: normal;
+  --small-light-font-weight: 300;
+  --small-light-letter-spacing: 0.28px;
+  --small-light-line-height: 167.99999475479126%;
+  --small-light-short-font-family: "Switzer-Light", Helvetica;
+  --small-light-short-font-size: 14px;
+  --small-light-short-font-style: normal;
+  --small-light-short-font-weight: 300;
+  --small-light-short-letter-spacing: 0.28px;
+  --small-light-short-line-height: 67.00000166893005%;
+  --small-medium-font-family: "Switzer-Medium", Helvetica;
+  --small-medium-font-size: 14px;
+  --small-medium-font-style: normal;
+  --small-medium-font-weight: 500;
+  --small-medium-letter-spacing: 0.28px;
+  --small-medium-line-height: 16px;
+  --small-regular-font-family: "Switzer-Regular", Helvetica;
+  --small-regular-font-size: 14px;
+  --small-regular-font-style: normal;
+  --small-regular-font-weight: 400;
+  --small-regular-joy-font-family: "IBMPlex Serif-SemiBoldItalic", Helvetica;
+  --small-regular-joy-font-size: 14px;
+  --small-regular-joy-font-style: italic;
+  --small-regular-joy-font-weight: 600;
+  --small-regular-joy-letter-spacing: 0.28px;
+  --small-regular-joy-line-height: 16px;
+  --small-regular-letter-spacing: 0.28px;
+  --small-regular-line-height: 16px;
+  --tiny-bold-font-family: "Switzer-Medium", Helvetica;
+  --tiny-bold-font-size: 12px;
+  --tiny-bold-font-style: normal;
+  --tiny-bold-font-weight: 500;
+  --tiny-bold-letter-spacing: 0.36px;
+  --tiny-bold-line-height: 16px;
+  --tiny-chips-font-family: "Switzer-Regular", Helvetica;
+  --tiny-chips-font-size: 10px;
+  --tiny-chips-font-style: normal;
+  --tiny-chips-font-weight: 400;
+  --tiny-chips-letter-spacing: 0.3px;
+  --tiny-chips-line-height: 16px;
+  --tiny-light-font-family: "Switzer-Light", Helvetica;
+  --tiny-light-font-size: 12px;
+  --tiny-light-font-style: normal;
+  --tiny-light-font-weight: 300;
+  --tiny-light-letter-spacing: 0.24px;
+  --tiny-light-line-height: 16px;
+  --tiny-nano-short-uppercased-font-family: "Switzer-Medium", Helvetica;
+  --tiny-nano-short-uppercased-font-size: 8px;
+  --tiny-nano-short-uppercased-font-style: normal;
+  --tiny-nano-short-uppercased-font-weight: 500;
+  --tiny-nano-short-uppercased-letter-spacing: 0.24px;
+  --tiny-nano-short-uppercased-line-height: 9px;
+  --tiny-regular-font-family: "Switzer-Regular", Helvetica;
+  --tiny-regular-font-size: 12px;
+  --tiny-regular-font-style: normal;
+  --tiny-regular-font-weight: 400;
+  --tiny-regular-letter-spacing: 0.36px;
+  --tiny-regular-line-height: 16px;
+  --tiny-regular-uppercased-font-family: "Switzer-Regular", Helvetica;
+  --tiny-regular-uppercased-font-size: 12px;
+  --tiny-regular-uppercased-font-style: normal;
+  --tiny-regular-uppercased-font-weight: 400;
+  --tiny-regular-uppercased-letter-spacing: 0.36px;
+  --tiny-regular-uppercased-line-height: 16px;
+  --tiny-tiny-font-family: "Switzer-Regular", Helvetica;
+  --tiny-tiny-font-size: 12px;
+  --tiny-tiny-font-style: normal;
+  --tiny-tiny-font-weight: 400;
+  --tiny-tiny-letter-spacing: 0.36px;
+  --tiny-tiny-line-height: 197.00000286102295%;
+  --user-interface-colors-accent: var(
+    --primitives-primitive-colors-dayzero-fresh-orange
+  );
+  --user-interface-colors-background: var(
+    --primitives-primitive-colors-dayzero-almost-white
+  );
+  --user-interface-colors-dark-contrast: var(
+    --primitives-primitive-colors-dayzero-almost-black
+  );
+  --user-interface-colors-disabled: var(
+    --primitives-primitive-colors-soft-gray
+  );
+  --user-interface-colors-divider: var(
+    --primitives-primitive-colors-dayzero-warm-mid-gray
+  );
+  --user-interface-colors-error: var(--primitives-primitive-colors-error);
+  --user-interface-colors-light-contrast: var(
+    --primitives-primitive-colors-light
+  );
+  --user-interface-colors-primary: var(
+    --primitives-primitive-colors-dayzero-almost-black
+  );
+  --user-interface-colors-secondary: var(
+    --primitives-primitive-colors-dayzero-olive-green
+  );
+  --user-interface-colors-shades-button-shade: var(
+    --primitives-primitive-colors-dayzero-warm-light-gray
+  );
+  --user-interface-colors-shades-gray-shade: var(
+    --primitives-primitive-colors-clear-gray-shade
+  );
+  --user-interface-colors-text: var(
+    --primitives-primitive-colors-dayzero-almost-black
+  );
+  --user-interface-colors-text-secondary: var(
+    --primitives-primitive-colors-dayzero-almost-black-active
+  );
+  --user-interface-radius-radius: var(--primitives-measurements-measurement-s);
+  --user-interface-radius-radius-huge: var(
+    --primitives-measurements-measurement-xl
+  );
+  --user-interface-radius-radius-medium: var(
+    --primitives-measurements-measurement-m
+  );
+  --user-interface-spacing-big-margin: var(
+    --primitives-measurements-measurement-xl
+  );
+  --user-interface-spacing-horizontal-margin: var(
+    --primitives-measurements-measurement-m
+  );
+  --user-interface-spacing-large-margin: var(
+    --primitives-measurements-measurement-l
+  );
+  --user-interface-spacing-short-margin: var(
+    --primitives-measurements-measurement-s
+  );
+  --user-interface-spacing-tiny-margin: var(
+    --primitives-measurements-measurement-xs
+  );
+  --user-interface-spacing-vertical-margin: var(
+    --primitives-measurements-measurement-m
+  );
 }
